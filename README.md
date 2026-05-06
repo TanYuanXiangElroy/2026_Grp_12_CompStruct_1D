@@ -13,17 +13,17 @@
 ---
 
 ## 🛠️ Tech Stack & Hardware
-* **Board:** Alchitry FPGA (Au/Cu)
+* **Board:** Alchitry FPGA Au
 * **Language:** Lucid (Hardware Description Language)
 * **Environment:** Alchitry Labs
-* **Peripherals:** Arcade buttons, [Add any LED strips, 7-segment displays, or buzzers you used]
+* **Peripherals:** Arcade buttons, 2 7-Segments (wired directly), 3 Feedback LEDs, 4 Metronome LEDs, 1 Rhythm LED
 
 ---
 
 ## 🏗️ Architecture Overview
 The core of RhythMania is split into two primary hardware components:
 
-1. **The Datapath:** Handles all the mathematical operations—keeping track of the score, comparing the player's input timing against the expected beat, and managing combo multipliers.
+1. **The Datapath:** Handles all the mathematical operations—keeping track of the score, comparing the player's input timing against the expected beat, and managing scoring system.
 2. **The Control Unit (FSM):** Manages the state of the game (e.g., `START_SCREEN`, `PLAYING`, `GAME_OVER`), controls the flow of data through the datapath, and triggers visual/audio outputs based on the current state and player performance.
 
 ---
@@ -31,4 +31,4 @@ The core of RhythMania is split into two primary hardware components:
 ## 🚀 Setup & Installation
 1. Clone this repository to your local machine:
    ```bash
-   git clone [https://github.com/your-username/RhythMania.git](https://github.com/your-username/RhythMania.git)
+   git clone [https://github.com/Jaydenye-jr/2026_Grp_12_CompStruct_1D.git](https://github.com/Jaydenye-jr/2026_Grp_12_CompStruct_1D.git)
