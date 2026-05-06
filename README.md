@@ -23,7 +23,7 @@
 ## 🏗️ Architecture Overview
 The core of RhythMania is split into two primary hardware components:
 
-1. **The Datapath:** Handles all the mathematical operations—keeping track of the score, comparing the player's input timing against the expected beat, and managing scoring system.
+1. **The Datapath:** Handles all the mathematical operations, such askeeping track of the score, comparing the player's input timing against the expected beat, and managing scoring system.
 2. **The Control Unit (FSM):** Manages the state of the game (e.g., `START_SCREEN`, `PLAYING`, `GAME_OVER`), controls the flow of data through the datapath, and triggers visual/audio outputs based on the current state and player performance.
 
 ---
