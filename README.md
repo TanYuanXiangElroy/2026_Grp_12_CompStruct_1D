@@ -1,34 +1,89 @@
-# RhythMania 🎵
+# RhythMania
 
-**RhythMania** is a custom hardware-based rhythm game engineered on the Alchitry FPGA. Designed as a major 1D hardware project at SUTD, it features a fully custom-built datapath and Finite State Machine (FSM) to handle game logic, input processing, and audio-visual synchronization.
+RhythMania is an FPGA rhythm game built for `50.002 Computation Structures` on the Alchitry Au board.  
+It challenges players to match beats accurately using a single large button, with real-time audio/visual feedback and hardware-scored timing precision.
 
----
+## Overview
 
-## 🕹️ Features
-* **Custom Game Logic:** Driven by a bespoke Finite State Machine (FSM) tailored for precise rhythm tracking.
-* **Hardware Datapath:** Optimized custom datapath built specifically for high-speed score calculation and input validation.
-* **Low-Latency Input:** Direct hardware polling ensures inputs are registered with zero software bloat.
+- **Tagline:** A beat matching rhythm game
+- **Core idea:** Listen to the rhythm call, then reproduce it on beat
+- **Platform:** Alchitry Au FPGA
+- **Language:** Lucid
+- **Environment:** Alchitry Labs
+
+## How The Game Works
+
+1. Press the main button to start.
+2. Countdown/metronome LEDs pulse to prepare the player.
+3. The system plays rhythm cues (LED + buzzer).
+4. After countdown, the player reproduces the rhythm with the button.
+5. The FPGA checks timing offset in real time and updates score.
+6. Feedback LEDs indicate hit quality:
+   - Green: Good
+   - Yellow: OK
+   - Red: Miss
+
+## Hardware I/O
+
+- **Input**
+  - 1x large arcade push button
+- **Outputs**
+  - 1x main rhythm LED
+  - 1x passive buzzer
+  - 2x 1-digit 7-segment displays (score)
+  - 3x hit feedback LEDs (good/ok/miss)
+  - 4x metronome/countdown LEDs
+
+## Architecture
+
+- **Control Unit (FSM):** Handles game states, sequencing, and control signals.
+- **Datapath:** Handles timestamp arithmetic, comparisons, score updates, ROM access, and register flow.
+- **Timing:** Uses millisecond-scale timing for beat windows and hit classification.
+
+## Documentation And Media
+
+- **Full Report:** [`documentation/2026 50.002 Project Group Report Team 12.pdf`](documentation/2026%2050.002%20Project%20Group%20Report%20Team%2012.pdf)
+- **Virtual Showcase (Primary):** [SUTD Design Exhibition - Team 12](https://natalieagus.net/2026/term4-design-exhibition/50002/team12)
+- **Virtual Showcase (Fallback):** [`documentation/RhythMania (Virtual Showcase).pdf`](documentation/RhythMania%20%28Virtual%20Showcase%29.pdf)
+- **Poster (PDF):** [![View Poster](documentation/poster-1.png)](documentation/poster-1.png)
+- **Demo Video (MP4):**
+<video src="documentation/video.mp4" width="100%" controls></video>
 
 
----
 
-## 🛠️ Tech Stack & Hardware
-* **Board:** Alchitry FPGA Au
-* **Language:** Lucid (Hardware Description Language)
-* **Environment:** Alchitry Labs
-* **Peripherals:** Arcade buttons, 2 7-Segments (wired directly), 3 Feedback LEDs, 4 Metronome LEDs, 1 Rhythm LED
+If the embedded video does not render in your viewer, open it directly: [Open Demo Video MP4](documentation/video.mp4)
 
----
+> If the virtual showcase page cannot be viewed, use the files in `documentation/` as the full offline backup.
 
-## 🏗️ Architecture Overview
-The core of RhythMania is split into two primary hardware components:
+## Quick Access Links
 
-1. **The Datapath:** Handles all the mathematical operations, such askeeping track of the score, comparing the player's input timing against the expected beat, and managing scoring system.
-2. **The Control Unit (FSM):** Manages the state of the game (e.g., `START_SCREEN`, `PLAYING`, `GAME_OVER`), controls the flow of data through the datapath, and triggers visual/audio outputs based on the current state and player performance.
+- [Open Poster PDF](documentation/poster.pdf)
+- [Open Demo Video MP4](documentation/video.mp4)
+- [Open Virtual Showcase PDF](documentation/RhythMania%20%28Virtual%20Showcase%29.pdf)
+- [Open Full Report PDF](documentation/2026%2050.002%20Project%20Group%20Report%20Team%2012.pdf)
 
----
+## Team And Contributors
 
-## 🚀 Setup & Installation
-1. Clone this repository to your local machine:
-   ```bash
-   git clone [https://github.com/Jaydenye-jr/2026_Grp_12_CompStruct_1D.git](https://github.com/Jaydenye-jr/2026_Grp_12_CompStruct_1D.git)
+- Wei Xian ([WeiXian042901](https://github.com/WeiXian042901))
+- Jayden ([Jaydenye-jr](https://github.com/Jaydenye-jr))
+- Elroy ([TanYuanXiangElroy](https://github.com/TanYuanXiangElroy))
+- Jarrod ([Jaelucard](https://github.com/Jaelucard))
+- Wong Kysin Natalie ([bataliee](https://github.com/bataliee))
+- Eilees ([eilees-3](https://github.com/eilees-3))
+- Salman ([Sslenderman](https://github.com/Sslenderman))
+
+## Repository Structure
+
+- `source/` - Lucid modules (FSM, datapath, ALU, peripherals, top-level)
+- `constraint/` - board pin/timing constraints
+- `cores/` - generated/managed IP core files
+- `build/` - build artifacts
+- `documentation/` - report, poster, showcase sheet, and demo video
+
+## Setup
+
+```bash
+git clone https://github.com/TanYuanXiangElroy/2026_Grp_12_CompStruct_1D.git
+```
+
+Then open `Rhythm Heaven.alp` in Alchitry Labs and build/program from there.
