@@ -46,7 +46,8 @@ It challenges players to match beats accurately using a single large button, wit
 - **Full Report:** [`documentation/2026 50.002 Project Group Report Team 12.pdf`](documentation/2026%2050.002%20Project%20Group%20Report%20Team%2012.pdf)
 - **Virtual Showcase (Primary):** [SUTD Design Exhibition - Team 12](https://natalieagus.net/2026/term4-design-exhibition/50002/team12)
 - **Virtual Showcase (Fallback):** [`documentation/RhythMania (Virtual Showcase).pdf`](documentation/RhythMania%20%28Virtual%20Showcase%29.pdf)
-- **Poster (PDF):** [![View Poster](documentation/poster-1.png)](documentation/poster-1.png)
+- **Poster (PDF):** <img width="1587" height="2245" alt="poster-1" src="https://github.com/user-attachments/assets/ea4bf386-eb48-4c28-bf55-a7425b867fe3" />
+
 - **Demo Video (MP4):**
 <video src="documentation/video.mp4" width="100%" controls></video>
 
