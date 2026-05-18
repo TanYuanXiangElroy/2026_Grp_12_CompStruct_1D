@@ -1,6 +1,7 @@
+
 # RhythMania
 
-RhythMania is an FPGA rhythm game built for `50.002 Computation Structures` on the Alchitry Au board.  
+RhythMania is an FPGA rhythm game built for [`50.002 Computation Structures`](https://natalieagus.github.io/50002/) on the Alchitry Au board.  
 It challenges players to match beats accurately using a single large button, with real-time audio/visual feedback and hardware-scored timing precision.
 
 ## Overview
@@ -48,6 +49,10 @@ It challenges players to match beats accurately using a single large button, wit
 - **Poster (PDF):** [![View Poster](documentation/poster-1.png)](documentation/poster-1.png)
 - **Demo Video (MP4):**
 <video src="documentation/video.mp4" width="100%" controls></video>
+
+https://github.com/user-attachments/assets/643e7915-2741-46ff-831d-6c97da0e85ee
+
+
 
 
 
